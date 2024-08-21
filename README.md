@@ -9,88 +9,56 @@
 - [x] 連接狀態檢測
 - [x] NAT
 
-# 安装
+## 安裝
 
 ### 環境
 
 環境為 Ubuntu 24.04，Linux Kernel 版本 6.8.0。
 
-### 从源码安装
+### 編譯與安裝
 
-安装时需要gcc以及make包，若未安装，请预先安装：
-```bash
-sudo apt install gcc make
-```
-
-首先，下载本项目源码至任意目录：
+首先，下載程式碼並解壓縮：
 ```bash
 unzip RJFireWall.zip
 
 cd RJFireWall
 ```
 
-随后，**编译源码**：
+**編譯**：
 ```bash
 sudo make
 ```
 
-最后，**安装**：
+**安装至 Linux 核心中**：
 ```bash
 sudo make install
 ```
 
-# 使用
+## 使用
 
-在安装时，内核模块已经加载至Linux内核中，此时，只需使用上层应用uapp来对防火墙进行控制即可。
+在安裝的步驟中，已經將 module 載入至 Linux 核心，此时，只需使用應用程式 uapp 來對防火牆下命令即可控制其運作。
 
-新增一条过滤规则：
+### 新增過濾規則：
 ```bash
 ./uapp rule add
 ```
-随后依据命令行提示设定规则即可。
 
-删除一条过滤规则：
+### 刪除過濾規則：
 ```bash
-./uapp rule del 所需删除规则的名称
+./uapp rule del 要刪除的規則名稱
 ```
 
-设置默认动作为Drop（防火墙初始时默认动作为Accept）：
-```bash
-./uapp rule default drop
-```
-
-展示已有规则：
+### 顯示已有規則：
 ```bash
 ./uapp ls rule
 ```
 
-展示所有过滤日志：
+### 顯示所有過濾日誌：
 ```bash
 ./uapp ls log
 ```
 
-展示最后100条过滤日志：
-```bash
-./uapp ls log 100
-```
-
-展示当前已有连接：
+### 顯示目前已有連接：
 ```bash
 ./uapp ls connect
-```
-
-新增一条NAT规则：
-```bash
-./uapp nat add
-```
-随后依据命令行提示设定规则即可。
-
-删除一条NAT规则：
-```bash
-./uapp nat del 所需删除NAT规则的序号
-```
-
-展示已有NAT规则：
-```bash
-./uapp ls nat
 ```
