@@ -1,6 +1,6 @@
 # RJ FireWall
 
-這是一個基於 Netfilter、Netlink 的 Linux L7 防火牆。
+這是一個基於 Netfilter、Netlink 的 Linux 傳輸層防火牆。
 
 功能：
 - [x] 按照來源 IP、目的 IP、埠號 (Port Number)，以及協定來過濾封包
